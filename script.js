@@ -1,45 +1,22 @@
+function play() {
+    const heading = document.getElementById("heading");
+    const input = document.getElementById("birthdayInput").value;
 
-let h1 = document.getElementById(".heading") ;
+    if (!input) {
+        heading.innerHTML = "Please enter a date!";
+        return;
+    }
 
+    let birthDate = new Date(input);
+    if (isNaN(birthDate) || birthDate <= -1) {
+        heading.innerHTML = "Invalid date format!";
+        return;
+    }
 
-function play (){
+    const today = new Date().getTime();
 
-    let nextBirthday = new Date(prompt("what your birthday" + "date , month , year"));
-    let rightNow = new Date();
+    const diffTime = birthDate - today;
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-let nextBirthdaymilisecond =  nextBirthday.getTime();
-let currentdateMilisecond = rightNow.getTime();
-let leftDays = ( nextBirthdaymilisecond - currentdateMilisecond) / (1000 * 60 * 60 * 24);
-
-h1.innerHTML = "days will ago" + Math.floor(leftDays);
+    heading.innerHTML = `🎉 ${diffDays} day(s) left until your next birthday!`;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
