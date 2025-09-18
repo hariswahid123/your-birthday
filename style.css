@@ -16,7 +16,7 @@ body {
 
 .heading {
     color: #333;
-    font-size: 2rem;
+    font-size: 0px;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -54,3 +54,45 @@ body {
     background-color: #45a049;
     transform: scale(1.05);
 }
+
+/* Mobile devices (max-width: 600px) */
+@media (max-width: 600px) {
+    #heading {
+        font-size: 1.4rem;
+        line-height: 1.5;
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    #birthdayInput {
+        width: 90%;
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    #button {
+        width: 90%;
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+/* Tablets (601px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+    #heading {
+        font-size: 1.8rem;
+    }
+
+    #birthdayInput {
+        width: 70%;
+        font-size: 1rem;
+    }
+
+    #button {
+        width: 70%;
+        font-size: 1.1rem;
+    }
+}
+
+
+

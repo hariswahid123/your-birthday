@@ -19,12 +19,16 @@ function play() {
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
     if (diffDays === 0) {
-        heading.innerHTML =  String.fromCodePoint(0x1F389 , 0x1F389) + " today is your birthday! " + String.fromCodePoint(0x1F389 , 0x1F389);
+        heading.innerHTML =  String.fromCodePoint(0x1F389) + " today is your birthday! " + String.fromCodePoint(0x1F389);
         return;
     }
 
-    
+    if (diffDays < 0) {
+        heading.innerHTML = "Your birthday has already passed this year! " + String.fromCodePoint(0x1F382 , 0x231B , 0x1F605);
+        return;
+    }
 
     heading.innerHTML = `🎉 ${diffDays} day(s) left until your next birthday!`;
 
 }
+ 
